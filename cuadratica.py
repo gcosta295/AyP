@@ -11,4 +11,4 @@ x1=(-b-h)/2*a
 x2=(-b+h)/2*a
 
 print("x1=",x1)
-print("x2=", x2)
+print("x2=",x2)

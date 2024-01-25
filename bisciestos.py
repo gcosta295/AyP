@@ -14,4 +14,4 @@ if int(x)>=2100:
 
 y=int(((int(x)-1900)//4)-h)
 
-print("Ahora la cantidad de años bisciestos es", y)
+print("Ahora la cantidad de años bisciestos es")
