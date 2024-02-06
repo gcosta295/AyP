@@ -8,38 +8,40 @@ defensa_oponente=100
 defensa_j=100
 print(jugador)
 ataquesj={"ascuas":20, "placaje":35, "malicioso":10}
-ataquesop={"ascuas":20, "placaje":35, "malicioso":10, "latigo":10}
+ataquesop={ "placaje":35, "malicioso":10, "latigo":10}
 
 while jugador>0 and oponent>0:
     ataque_j=""
     while not ataque_j:
         ataque_j=input("ataque?")
+        if ataque_j in ataquesj:
+            efecto=ataquesj[ataque_j]
+            
+            if ataque_j=="malicioso":
+                defensa_oponente -=efecto
+                print("Def del oponente =", defensa_oponente)
+                print("HP del oponente es=", oponent)
 
-        if ataque_j=="malicioso":
-            defensa_oponente -=(ataquesj["malicioso"])
-            print("Def del oponente =", defensa_oponente)
-            print("HP del oponente es=", oponent)
-
-        elif ataque_j=="placaje":
-            oponent-=((ataquesj["placaje"])**2)/ defensa_oponente
-            print("Def del oponente =", defensa_oponente)
-            print("HP del oponente es=", oponent)
+            elif ataque_j=="placaje":
+                oponent-=(efecto**2)/ defensa_oponente
+                print("Def del oponente =", defensa_oponente)
+                print("HP del oponente es=", oponent)
 
         elif ataque_j=="ascuas":
-            oponent-=(ataquesj["ascuas"])
+            oponent-=efecto
             print("Def del oponente =", defensa_oponente)
             print("HP del oponente es=", oponent)
             print(jugador)
 
         else:
-            print("que estas haciendo?! tus ataques son", 
-                  "malicioso, ascuas y placaje")
+            print("que estas haciendo?! tus ataques son", list(ataquesj))
             ataque_j=""
 
         #no borramos ataque_j para que vuelba a preguntar
     #el jugador ha atacado ahora le toca al oponente
     
     ataque_oponente = random.randrange(1,3+1)
+    auch=ataquesop(0,2)
     if ataque_oponente==1: #latigo
         defensa_j -=(ataquesop["latigo"])
         print("Tu ponente ha usado latigo")

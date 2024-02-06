@@ -17,25 +17,21 @@ while jugador>0 and oponent>0:
     while not ataque_j:
         ataque_j=input("ataque?")
 
-        if ataque_j=="malicioso":
-            defensa_oponente -=(ataquesj["malicioso"][1])
-            print("Def del oponente =", defensa_oponente)
-            print("HP del oponente es=", oponent)
+        if ataque_j in ataquesj:
+            if ataque_j=="placaje":
+                oponent-=((ataquesj[ataque_j][0])**2)/ defensa_oponente
+                print("Def del oponente =", defensa_oponente)
+                print("HP del oponente es=", oponent)
 
-        elif ataque_j=="placaje":
-            oponent-=((ataquesj["placaje"][0])**2)/ defensa_oponente
-            print("Def del oponente =", defensa_oponente)
-            print("HP del oponente es=", oponent)
-
-        elif ataque_j=="ascuas":
-            oponent-=(ataquesj["ascuas"][0])
-            print("Def del oponente =", defensa_oponente)
-            print("HP del oponente es=", oponent)
-            print(jugador)
+            else:
+                oponent-=(ataquesj[ataque_j][1])
+                defensa_oponente-=(ataquesj[ataque_j][1])
+                print("Def del oponente =", defensa_oponente)
+                print("HP del oponente es=", oponent)
 
         else:
             print("que estas haciendo?! tus ataques son", 
-                  "malicioso, ascuas y placaje")
+                    "malicioso, ascuas y placaje")
             ataque_j=""
 
         #no borramos ataque_j para que vuelba a preguntar
