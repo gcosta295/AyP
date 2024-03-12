@@ -74,11 +74,11 @@ while aviones!=2:
 
     prueba=avion(brand,model,origen,year)
     datos3+='''
------------------------------------------\n'''
+----------------------- ------------------\n'''
     datos3+=(prueba.show_attr())
     
     print(datos3)
     aviones+=1
 
-print(datos2+datos3+datos2)
+print(datos+datos3+datos2)
 

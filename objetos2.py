@@ -1,5 +1,5 @@
 class vehicle:
-    def __init__(self,brand,model,color,) -> None:
+    def __init__(self,brand,model,color) -> None:
         self.brand=brand
         self.model=model
         self.color=color

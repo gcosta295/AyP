@@ -1,0 +1,16 @@
+
+def bubble_sort(vector):
+    n=len(vector)
+    for i in range(n,0,-1):
+        for j in range(i-1,0,-1):
+            print(j)
+            if vector[j]<vector[j-1]:
+                aux=vector[j]
+                vector[j]=vector[j-1]
+                vector[j-1]=aux
+    return vector
+
+lista=[1,19,6,7,4,3,2]
+
+
+print(bubble_sort(lista))
