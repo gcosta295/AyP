@@ -1,11 +1,21 @@
-defensa_j=100
-jug=[]
-oponente=[]
-def_oponente=100
-oponent=100
-ataquesj= {"ascuas":(20,0), "placaje":(35,0), "malicioso":(0,10)}
+from matplotlib import pyplot as plt
 
-ataquesop={"ascuas":(20,0), "placaje":(35,0), "latigo":(10,10)}
-ataque_j=input("ataque")
+names = ['group_aaaaaaaaa']
+values = [1, 10, 100]
 
+# plt.figure(figsize=(10, 5))
 
+# plt.subplot(132)
+# plt.bar(names, values)
+# plt.width=10
+# plt.suptitle('Categorical Plotting')
+# plt.show()
+
+fruit_names = ['Coffee', 'Salted Caramel', 'Pistachio']
+fruit_counts = [4000, 2000, 7000]
+
+fig, ax = plt.subplots()
+bar_container = ax.bar(fruit_names, fruit_counts)
+ax.set(ylabel='pints sold', title='Gelato sales by flavor')
+ax.bar_label(bar_container, fmt='{:,.0f}')
+plt.show()
